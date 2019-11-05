@@ -1,0 +1,51 @@
+version: '2'
+
+volumes:
+  database_data:
+    driver: local
+
+services:
+  db:
+      hostname: db
+      image: postgres:latest
+      volumes:
+      - database_data:/var/lib/postgresql/data
+      environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_DB=cube
+          - POSTGRES_PASSWORD=postgres
+      ports:
+          - '5432:5432'
+
+  redis:
+      restart: always
+      image: redis:latest
+      volumes:
+            - .:/redisdata
+      ports:
+            - "6379:6379"
+
+  server:
+      build:
+          context: .
+          dockerfile: Dockerfile
+      tty: true
+      volumes:
+          - .:/cardboardcube
+      ports:
+          - '80:80'
+      environment:
+          - PYTHONUNBUFFERED=1
+          - STARTUP_COMMAND=python3 /cardboardcube/CardboardCube/manage.py runserver 0.0.0.0:80
+          - DJANGO_SETTINGS_MODULE=settings
+          - DEBUG=True
+          - DB_HOST=db
+          - DB_USER=postgres
+          - DB_NAME=cube
+          - REDISHOST=redis
+      links:
+          - db
+          - redis
+      depends_on:
+          - db
+          - redis
