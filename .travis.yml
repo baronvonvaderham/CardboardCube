@@ -1,11 +1,6 @@
 language: python
 python:
 - '3.6'
-env:
-  global:
-    secure: HHr6/U5DCWOQar920A1PdSOn7o/n/KXyfzGRIwEpkNHpCp8ubYvPHWN++Q+Pwgt8JAY76yy6+wRjUUldBvh2DlFEmAZ/boFoNwJdItp2I7UtB4jEdM2P0FB1wVmnaV4pwn835KbSuwVhDSXzM1TFUFaJfPeGVj23SU4qoq4/e5GxCES1SHth1TkNAbS5RAEq2r7jNEa4fvgRGddA5lNI50yWknuQMnKviHG+EKejHHAeKYRE1NXIdc4rjncuZkeEqhX6Vt8KyInEvEPaP2v3SfDFxAIG76N0IYjl7INnvco0aSjoV3SQBdRU9/y4UdEtjRywHaZCdibJfa/mnv+HFusp5EnCCPonCmBVlPCRqlJgcrf0ax08S1CoXqt3/s2S7qzEgznfuSsHe/Mz47e8zLu20cyVPHmEZ3N/2pd9ZNBRKgq2c2VpsFXII2nZyT67AnbuPNnuDHNODKTYApmlgoqs8pT9nDQEMABu7p9U88KFhqCfFp4Lv+D4Ee4+MCqUWoqt3NNpR7J43s1eRG1dd4adfYt0Voj2htU49R07nvEthYlPeC4o0lVLPwml4VKBMOOh6wLpGrFRMesRjzNB+wsQwsu6kYYaFadjXrvL2Napg4t3Ft0j+zBdaKhygR+IdFIenaEqFV2PNRkAPRvMHkBVpba1cGhTSQ4Ymgg7BBg=
-before_install:
-  - openssl aes-256-cbc -K $encrypted_c9c639375097_key -iv $encrypted_c9c639375097_iv -in github_deploy_key.enc -out github_deploy_key -d
 install:
   - pip install -r CardboardCube/requirements.txt
   - pip install coveralls
