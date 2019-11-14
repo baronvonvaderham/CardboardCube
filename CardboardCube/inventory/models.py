@@ -14,6 +14,10 @@ class UserInventory(models.Model):
 
     objects = models.Manager()
 
+    class Meta:
+        verbose_name = _('User Inventory')
+        verbose_name_plural = _('User Inventories')
+
     def __str__(self):
         return "{}'s Inventory".format(self.owner.username)
 
@@ -38,6 +42,10 @@ class UserSubCollection(models.Model):
     owner = models.ForeignKey('registration.User', on_delete=models.CASCADE)
 
     objects = models.Manager()
+
+    class Meta:
+        verbose_name = _('User Sub-Collection')
+        verbose_name_plural = _('User Sub-Collections')
 
     def __str__(self):
         collection_type = self.type_override if self.type == 'Other' else self.type
@@ -94,8 +102,8 @@ class InventoryItem(models.Model):
     objects = models.Manager()
 
     class Meta:
-        verbose_name = _('inventory_item')
-        verbose_name_plural = _('inventory_items')
+        verbose_name = _('Inventory Item')
+        verbose_name_plural = _('Inventory Items')
 
     def __str__(self):
         name = "{condition} {card_name} [{card_set}]".format(
@@ -137,7 +145,8 @@ class GradingDetails(models.Model):
     objects = models.Manager()
 
     class Meta:
-        verbose_name = _('grading_details')
+        verbose_name = _('Grading Details')
+        verbose_name_plural = _('Grading Details')
 
     def determine_abbreviation(self):
         subgrades = [self.centering_grade, self.corners_grade, self.edges_grade, self.surfaces_grade]

@@ -41,6 +41,7 @@ DJANGO_AND_EXTERNAL_APPS = [
     'card_catalog',
     'rest_framework',
     'corsheaders',
+    'guardian',
 ]
 
 LOCAL_APPS = [
@@ -101,6 +102,11 @@ REDIS_HOST = os.getenv('REDIS_HOST', 'redis://')
 
 AUTH_USER_MODEL = 'registration.User'
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'guardian.backends.ObjectPermissionBackend',
+)
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -135,3 +141,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# CELERY
+BROKER_URL = os.getenv('CELERY_BROKER_URL', REDIS_HOST)
+BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 21600}  # 6 hours
+CELERY_APP_NAME = ''
+CELERY_RESULT_BACKEND = 'redis://'
+CELERY_ENABLE_UTC = True
+CELERY_TIMEZONE = TIME_ZONE
+CELERY_DISABLE_RATE_LIMITS = True
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_ALWAYS_EAGER = os.getenv('CELERY_ALWAYS_EAGER', False)
+
+# TCGPlayer API Settings
+TCG_API_PUBLIC_KEY = os.getenv('TCG_API_PUBLIC_KEY', None)
+TCG_API_PRIVATE_KEY = os.getenv('TCG_API_PRIVATE_KEY', None)
+TCG_API_APPLICATION_ID = os.getenv('TCG_API_APPLICATION_ID', None)
+TCG_AFFILIATE_PARTNER_CODE = os.getenv('TCG_AFFILIATE_PARTNER_CODE', None)
