@@ -13,4 +13,3 @@ omit =
     *urls.py
     *__init__.py
     *apps.py
-    *home/*
