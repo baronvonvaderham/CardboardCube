@@ -40,7 +40,6 @@ DJANGO_AND_EXTERNAL_APPS = [
 
     'card_catalog',
     'rest_framework',
-    'corsheaders',
     'guardian',
 ]
 
