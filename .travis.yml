@@ -11,4 +11,4 @@ install:
 script: coverage run CardboardCube/manage.py test
 notifications:
   email: false
-after_success: coveralls
+after_success: coveralls --rcfile=../.coveragerc
