@@ -18,16 +18,6 @@
   },
   {
     "model": "inventory.usersubcollection",
-    "pk": "08219e58-58d8-4567-be86-90749096068d",
-    "fields": {
-      "kind": "cube",
-      "kind_override": "",
-      "description": "TestUser's Cube 1",
-      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
-    }
-  },
-  {
-    "model": "inventory.usersubcollection",
     "pk": "212b798d-81c8-40a5-b896-349a54c1024d",
     "fields": {
       "kind": "other",

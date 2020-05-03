@@ -3,6 +3,8 @@ import uuid
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from inventory.exceptions import InvalidInventoryItemException
+
 
 class UserInventory(models.Model):
     """
@@ -18,7 +20,7 @@ class UserInventory(models.Model):
         verbose_name_plural = _('User Inventories')
 
     def __str__(self):
-        return "{}'s Inventory".format(self.owner.username)
+        return "{self.owner.username}'s Inventory"
 
     @property
     def inventory_items(self):
@@ -51,7 +53,7 @@ class UserInventory(models.Model):
 
     def add_card_to_inventory(self, card_data):
         try:
-            inventory_item = InventoryItem(
+            inventory_item = InventoryItem.objects.create(
                 quantity_owned=card_data.get('quantity_owned') or 0,
                 quantity_wanted=card_data.get('quantity_wanted') or 0,
                 card=card_data.get('card'),
@@ -66,9 +68,8 @@ class UserInventory(models.Model):
                 inventory=self,
                 owner=self.owner,
             )
-            inventory_item.save()
-        except Exception as err:
-            return {'Errors': f'Unable to add card as inventory item: {err}'}
+        except (ValueError, TypeError) as err:
+            raise InvalidInventoryItemException({'Errors': f'Unable to add card as inventory item: {err}'})
 
         return inventory_item
 
@@ -79,17 +80,17 @@ class UserSubCollection(models.Model):
     """
 
     KIND_CHOICES = [
-        ('CUBE', 'Cube'),
-        ('DECK', 'Deck'),
-        ('COLLECTION', 'Collection'),
-        ('TRADELIST', 'Tradelist'),
-        ('OTHER', 'Other'),
+        ('CUBE', 'cube'),
+        ('DECK', 'deck'),
+        ('COLLECTION', 'collection'),
+        ('TRADELIST', 'tradelist'),
+        ('OTHER', 'other'),
     ]
 
     uuid = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True)
     kind = models.CharField(max_length=10, choices=KIND_CHOICES)
-    kind_override = models.CharField(max_length=56)
-    description = models.TextField(max_length=256)
+    kind_override = models.CharField(null=True, max_length=56)
+    description = models.TextField(null=True, max_length=256)
     owner = models.ForeignKey('registration.User', on_delete=models.CASCADE)
 
     objects = models.Manager()
@@ -100,7 +101,7 @@ class UserSubCollection(models.Model):
 
     def __str__(self):
         collection_type = self.kind_override if self.kind == 'Other' else self.kind
-        return "{}'s {}}".format(self.owner.username, collection_type)
+        return f"{self.owner.username}'s {collection_type}"
 
 
 class InventoryItem(models.Model):
@@ -173,7 +174,7 @@ class InventoryItem(models.Model):
             if self.__getattribute__(field):
                 name += f" {field_name}"
         if self.is_graded and self.grading_details:
-            name = "{} ".format(self.grading_details.overall_grade) + name
+            name = "{self.grading_details.overall_grade} " + name
         return name
 
 
