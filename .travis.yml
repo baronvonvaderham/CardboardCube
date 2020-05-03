@@ -8,7 +8,7 @@ env:
 install:
   - pip install -r CardboardCube/requirements.txt
   - pip install coveralls
-script: coverage run CardboardCube/manage.py test
+script: coverage run CardboardCube/manage.py test --rcfile=.coveragerc
 notifications:
   email: false
-after_success: coveralls --rcfile=../.coveragerc
+after_success: coveralls
