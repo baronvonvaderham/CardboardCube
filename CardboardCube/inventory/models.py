@@ -20,7 +20,7 @@ class UserInventory(models.Model):
         verbose_name_plural = _('User Inventories')
 
     def __str__(self):
-        return "{self.owner.username}'s Inventory"
+        return f"{self.owner.username}'s Inventory"
 
     @property
     def inventory_items(self):
@@ -100,7 +100,7 @@ class UserSubCollection(models.Model):
         verbose_name_plural = _('User Sub-Collections')
 
     def __str__(self):
-        collection_type = self.kind_override if self.kind == 'Other' else self.kind
+        collection_type = self.kind_override if self.kind == 'other' else self.kind
         return f"{self.owner.username}'s {collection_type}"
 
 

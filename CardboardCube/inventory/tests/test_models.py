@@ -37,6 +37,9 @@ class TestInventoryModels(TestCase):
         self.assertEqual(len(inventories), 1)
         self.assertEqual(len(subcollections), 10)
 
+    def test_inventory_name(self):
+        self.assertEqual(self.inventory.__str__(), f"{self.user.username}'s Inventory")
+
     def test_add_card_to_inventory__success(self):
         card_data = {
             'card': self.arid_mesa,
@@ -76,27 +79,38 @@ class TestInventoryModels(TestCase):
         for cube in self.inventory.cubes:
             self.assertIsInstance(cube, UserSubCollection)
             self.assertEqual(cube.kind, 'cube')
+            self.assertEqual(cube.__str__(), f"{self.user.username}'s {cube.kind}")
 
     def test_decks(self):
         self.assertEqual(len(self.inventory.cubes), 2)
         for deck in self.inventory.decks:
             self.assertIsInstance(deck, UserSubCollection)
             self.assertEqual(deck.kind, 'deck')
+            self.assertEqual(deck.__str__(), f"{self.user.username}'s {deck.kind}")
 
     def test_collections(self):
         self.assertEqual(len(self.inventory.collections), 2)
         for collection in self.inventory.collections:
             self.assertIsInstance(collection, UserSubCollection)
             self.assertEqual(collection.kind, 'collection')
+            self.assertEqual(
+                collection.__str__(), f"{self.user.username}'s {collection.kind}"
+            )
 
     def test_tradelists(self):
         self.assertEqual(len(self.inventory.tradelists), 2)
         for tradelist in self.inventory.tradelists:
             self.assertIsInstance(tradelist, UserSubCollection)
             self.assertEqual(tradelist.kind, 'tradelist')
+            self.assertEqual(
+                tradelist.__str__(), f"{self.user.username}'s {tradelist.kind}"
+            )
 
     def test_other(self):
         self.assertEqual(len(self.inventory.other_subcollections), 2)
         for other in self.inventory.other_subcollections:
             self.assertIsInstance(other, UserSubCollection)
             self.assertEqual(other.kind, 'other')
+            self.assertEqual(
+                other.__str__(), f"{self.user.username}'s {other.kind_override}"
+            )
