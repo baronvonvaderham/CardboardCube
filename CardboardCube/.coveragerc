@@ -4,8 +4,12 @@ source = .
 omit =
     *tests*
     *migrations*
-    *settings
+    *settings/*
     *wsgi.py
     *manage.py
     *celery_app.py
     *test_*
+    *fixtures/*
+    *urls.py
+    *__init__.py
+    *apps.py
