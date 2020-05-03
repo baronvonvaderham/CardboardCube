@@ -1,11 +1,14 @@
 language: python
 python:
-- '3.6'
+  - '3.6'
 services:
   - postgresql
+env:
+  - ENVIRONMENT=test
 install:
   - pip install -r CardboardCube/requirements.txt
   - pip install coveralls
+  - python manage.py migrate
 script: coverage run CardboardCube/manage.py test
 notifications:
   email: false
