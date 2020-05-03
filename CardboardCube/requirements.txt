@@ -16,4 +16,4 @@ pytest-django==3.5.1
 redis==3.2.1
 requests==2.22.0
 
--e git+ssh://git@github.com/baronvonvaderham/django-mtg-card-catalog@master#egg=django-mtg-card-catalog
+git+https://github.com/baronvonvaderham/django-mtg-card-catalog.git
