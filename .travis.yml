@@ -9,6 +9,7 @@ install:
   - pip install -r CardboardCube/requirements.txt
   - pip install coveralls
   - python CardboardCube/manage.py migrate
+  - createdb cube_test
 script: coverage run CardboardCube/manage.py test
 notifications:
   email: false
