@@ -1,0 +1,822 @@
+[
+  {
+    "model": "card_catalog.card",
+    "pk": 1,
+    "fields": {
+      "name": "Arid Mesa",
+      "tcg_product_id": "104306",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/arid-mesa",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104306_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life, Sacrifice Arid Mesa: Search your library for a Mountain or Plains card, put it onto the battlefield, then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 2,
+    "fields": {
+      "name": "Steam Vents",
+      "tcg_product_id": "104307",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/steam-vents",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104307_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Island', 'Mountain']",
+      "colors": "[]",
+      "color_identity": "['R', 'U']",
+      "oracle_text": "({T}: Add {U} or {R}.)\nAs Steam Vents enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 3,
+    "fields": {
+      "name": "Hallowed Fountain",
+      "tcg_product_id": "104372",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/hallowed-fountain",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104372_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Plains', 'Island']",
+      "colors": "[]",
+      "color_identity": "['U', 'W']",
+      "oracle_text": "({T}: Add {W} or {U}.)\nAs Hallowed Fountain enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 4,
+    "fields": {
+      "name": "Sunken Hollow",
+      "tcg_product_id": "104373",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/sunken-hollow",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104373_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Island', 'Swamp']",
+      "colors": "[]",
+      "color_identity": "['B', 'U']",
+      "oracle_text": "({T}: Add {U} or {B}.)\nSunken Hollow enters the battlefield tapped unless you control two or more basic lands."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 5,
+    "fields": {
+      "name": "Smoldering Marsh",
+      "tcg_product_id": "104374",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/smoldering-marsh",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104374_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Swamp', 'Mountain']",
+      "colors": "[]",
+      "color_identity": "['B', 'R']",
+      "oracle_text": "({T}: Add {B} or {R}.)\nSmoldering Marsh enters the battlefield tapped unless you control two or more basic lands."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 6,
+    "fields": {
+      "name": "Cinder Glade",
+      "tcg_product_id": "104375",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/cinder-glade",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104375_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Mountain', 'Forest']",
+      "colors": "[]",
+      "color_identity": "['G', 'R']",
+      "oracle_text": "({T}: Add {R} or {G}.)\nCinder Glade enters the battlefield tapped unless you control two or more basic lands."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 7,
+    "fields": {
+      "name": "Canopy Vista",
+      "tcg_product_id": "104376",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/canopy-vista",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104376_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Forest', 'Plains']",
+      "colors": "[]",
+      "color_identity": "['G', 'W']",
+      "oracle_text": "({T}: Add {G} or {W}.)\nCanopy Vista enters the battlefield tapped unless you control two or more basic lands."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 8,
+    "fields": {
+      "name": "Prairie Stream",
+      "tcg_product_id": "104377",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/prairie-stream",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104377_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Plains', 'Island']",
+      "colors": "[]",
+      "color_identity": "['U', 'W']",
+      "oracle_text": "({T}: Add {W} or {U}.)\nPrairie Stream enters the battlefield tapped unless you control two or more basic lands."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 9,
+    "fields": {
+      "name": "Godless Shrine",
+      "tcg_product_id": "104741",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/godless-shrine",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104741_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Plains', 'Swamp']",
+      "colors": "[]",
+      "color_identity": "['B', 'W']",
+      "oracle_text": "({T}: Add {W} or {B}.)\nAs Godless Shrine enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 10,
+    "fields": {
+      "name": "Sacred Foundry",
+      "tcg_product_id": "104816",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/sacred-foundry",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104816_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Mountain', 'Plains']",
+      "colors": "[]",
+      "color_identity": "['R', 'W']",
+      "oracle_text": "({T}: Add {R} or {W}.)\nAs Sacred Foundry enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 11,
+    "fields": {
+      "name": "Flooded Strand",
+      "tcg_product_id": "104960",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/flooded-strand",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104960_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life, Sacrifice Flooded Strand: Search your library for a Plains or Island card, put it onto the battlefield, then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 12,
+    "fields": {
+      "name": "Temple Garden",
+      "tcg_product_id": "104961",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/temple-garden",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/104961_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Forest', 'Plains']",
+      "colors": "[]",
+      "color_identity": "['G', 'W']",
+      "oracle_text": "({T}: Add {G} or {W}.)\nAs Temple Garden enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 13,
+    "fields": {
+      "name": "Misty Rainforest",
+      "tcg_product_id": "105018",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/misty-rainforest",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105018_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life, Sacrifice Misty Rainforest: Search your library for a Forest or Island card, put it onto the battlefield, then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 14,
+    "fields": {
+      "name": "Blood Crypt",
+      "tcg_product_id": "105549",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/blood-crypt",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105549_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Swamp', 'Mountain']",
+      "colors": "[]",
+      "color_identity": "['B', 'R']",
+      "oracle_text": "({T}: Add {B} or {R}.)\nAs Blood Crypt enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 15,
+    "fields": {
+      "name": "Bloodstained Mire",
+      "tcg_product_id": "105550",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/bloodstained-mire",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105550_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life, Sacrifice Bloodstained Mire: Search your library for a Swamp or Mountain card, put it onto the battlefield, then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 16,
+    "fields": {
+      "name": "Breeding Pool",
+      "tcg_product_id": "105551",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/breeding-pool",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105551_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Forest', 'Island']",
+      "colors": "[]",
+      "color_identity": "['G', 'U']",
+      "oracle_text": "({T}: Add {G} or {U}.)\nAs Breeding Pool enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 17,
+    "fields": {
+      "name": "Marsh Flats",
+      "tcg_product_id": "105552",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/marsh-flats",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105552_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life, Sacrifice Marsh Flats: Search your library for a Plains or Swamp card, put it onto the battlefield, then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 18,
+    "fields": {
+      "name": "Overgrown Tomb",
+      "tcg_product_id": "105553",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/overgrown-tomb",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105553_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Swamp', 'Forest']",
+      "colors": "[]",
+      "color_identity": "['B', 'G']",
+      "oracle_text": "({T}: Add {B} or {G}.)\nAs Overgrown Tomb enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 19,
+    "fields": {
+      "name": "Polluted Delta",
+      "tcg_product_id": "105554",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/polluted-delta",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105554_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life, Sacrifice Polluted Delta: Search your library for an Island or Swamp card, put it onto the battlefield, then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 20,
+    "fields": {
+      "name": "Scalding Tarn",
+      "tcg_product_id": "105555",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/scalding-tarn",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105555_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life, Sacrifice Scalding Tarn: Search your library for an Island or Mountain card, put it onto the battlefield, then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 21,
+    "fields": {
+      "name": "Stomping Ground",
+      "tcg_product_id": "105556",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/stomping-ground",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105556_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Mountain', 'Forest']",
+      "colors": "[]",
+      "color_identity": "['G', 'R']",
+      "oracle_text": "({T}: Add {R} or {G}.)\nAs Stomping Ground enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 22,
+    "fields": {
+      "name": "Watery Grave",
+      "tcg_product_id": "105557",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/watery-grave",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105557_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "['Island', 'Swamp']",
+      "colors": "[]",
+      "color_identity": "['B', 'U']",
+      "oracle_text": "({T}: Add {U} or {B}.)\nAs Watery Grave enters the battlefield, you may pay 2 life. If you don't, it enters the battlefield tapped."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 23,
+    "fields": {
+      "name": "Verdant Catacombs",
+      "tcg_product_id": "105558",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/verdant-catacombs",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105558_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life, Sacrifice Verdant Catacombs: Search your library for a Swamp or Forest card, put it onto the battlefield, then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 24,
+    "fields": {
+      "name": "Windswept Heath",
+      "tcg_product_id": "105559",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/windswept-heath",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105559_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life, Sacrifice Windswept Heath: Search your library for a Forest or Plains card, put it onto the battlefield, then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 25,
+    "fields": {
+      "name": "Wooded Foothills",
+      "tcg_product_id": "105560",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/wooded-foothills",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/105560_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life, Sacrifice Wooded Foothills: Search your library for a Mountain or Forest card, put it onto the battlefield, then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 26,
+    "fields": {
+      "name": "Ancient Tomb",
+      "tcg_product_id": "110722",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/ancient-tomb",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110722_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}: Add {C}{C}. Ancient Tomb deals 2 damage to you."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 27,
+    "fields": {
+      "name": "Cascade Bluffs",
+      "tcg_product_id": "110723",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/cascade-bluffs",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110723_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['R', 'U']",
+      "oracle_text": "{T}: Add {C}.\n{U/R}, {T}: Add {U}{U}, {U}{R}, or {R}{R}."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 28,
+    "fields": {
+      "name": "Dust Bowl",
+      "tcg_product_id": "110724",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/dust-bowl",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110724_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}: Add {C}.\n{3}, {T}, Sacrifice a land: Destroy target nonbasic land."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 29,
+    "fields": {
+      "name": "Eye of Ugin",
+      "tcg_product_id": "110725",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/eye-of-ugin",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110725_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Legendary', 'Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "Colorless Eldrazi spells you cast cost {2} less to cast.\n{7}, {T}: Search your library for a colorless creature card, reveal it, and put it into your hand. Then shuffle your library."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 30,
+    "fields": {
+      "name": "Fetid Heath",
+      "tcg_product_id": "110726",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/fetid-heath",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110726_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['B', 'W']",
+      "oracle_text": "{T}: Add {C}.\n{W/B}, {T}: Add {W}{W}, {W}{B}, or {B}{B}."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 31,
+    "fields": {
+      "name": "Flooded Grove",
+      "tcg_product_id": "110727",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/flooded-grove",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110727_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['G', 'U']",
+      "oracle_text": "{T}: Add {C}.\n{G/U}, {T}: Add {G}{G}, {G}{U}, or {U}{U}."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 32,
+    "fields": {
+      "name": "Forbidden Orchard",
+      "tcg_product_id": "110728",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/forbidden-orchard",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110728_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}: Add one mana of any color.\nWhenever you tap Forbidden Orchard for mana, target opponent creates a 1/1 colorless Spirit creature token."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 33,
+    "fields": {
+      "name": "Graven Cairns",
+      "tcg_product_id": "110729",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/graven-cairns",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110729_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['B', 'R']",
+      "oracle_text": "{T}: Add {C}.\n{B/R}, {T}: Add {B}{B}, {B}{R}, or {R}{R}."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 34,
+    "fields": {
+      "name": "Horizon Canopy",
+      "tcg_product_id": "110730",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/horizon-canopy",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110730_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['G', 'W']",
+      "oracle_text": "{T}, Pay 1 life: Add {G} or {W}.\n{1}, {T}, Sacrifice Horizon Canopy: Draw a card."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 35,
+    "fields": {
+      "name": "Fire-Lit Thicket",
+      "tcg_product_id": "110731",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/fire-lit-thicket",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110731_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['G', 'R']",
+      "oracle_text": "{T}: Add {C}.\n{R/G}, {T}: Add {R}{R}, {R}{G}, or {G}{G}."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 36,
+    "fields": {
+      "name": "Kor Haven",
+      "tcg_product_id": "110732",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/kor-haven",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110732_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Legendary', 'Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['W']",
+      "oracle_text": "{T}: Add {C}.\n{1}{W}, {T}: Prevent all combat damage that would be dealt by target attacking creature this turn."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 37,
+    "fields": {
+      "name": "Mana Confluence",
+      "tcg_product_id": "110733",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/mana-confluence",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110733_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}, Pay 1 life: Add one mana of any color."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 38,
+    "fields": {
+      "name": "Mystic Gate",
+      "tcg_product_id": "110734",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/mystic-gate",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110734_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['U', 'W']",
+      "oracle_text": "{T}: Add {C}.\n{W/U}, {T}: Add {W}{W}, {W}{U}, or {U}{U}."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 39,
+    "fields": {
+      "name": "Rugged Prairie",
+      "tcg_product_id": "110735",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/rugged-prairie",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110735_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['R', 'W']",
+      "oracle_text": "{T}: Add {C}.\n{R/W}, {T}: Add {R}{R}, {R}{W}, or {W}{W}."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 40,
+    "fields": {
+      "name": "Strip Mine",
+      "tcg_product_id": "110736",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/strip-mine",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110736_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}: Add {C}.\n{T}, Sacrifice Strip Mine: Destroy target land."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 41,
+    "fields": {
+      "name": "Sunken Ruins",
+      "tcg_product_id": "110737",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/sunken-ruins",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110737_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['B', 'U']",
+      "oracle_text": "{T}: Add {C}.\n{U/B}, {T}: Add {U}{U}, {U}{B}, or {B}{B}."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 42,
+    "fields": {
+      "name": "Tectonic Edge",
+      "tcg_product_id": "110738",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/tectonic-edge",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110738_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}: Add {C}.\n{1}, {T}, Sacrifice Tectonic Edge: Destroy target nonbasic land. Activate this ability only if an opponent controls four or more lands."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 43,
+    "fields": {
+      "name": "Twilight Mire",
+      "tcg_product_id": "110739",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/twilight-mire",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110739_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['B', 'G']",
+      "oracle_text": "{T}: Add {C}.\n{B/G}, {T}: Add {B}{B}, {B}{G}, or {G}{G}."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 44,
+    "fields": {
+      "name": "Wasteland",
+      "tcg_product_id": "110740",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/wasteland",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110740_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "[]",
+      "oracle_text": "{T}: Add {C}.\n{T}, Sacrifice Wasteland: Destroy target nonbasic land."
+    }
+  },
+  {
+    "model": "card_catalog.card",
+    "pk": 45,
+    "fields": {
+      "name": "Wooded Bastion",
+      "tcg_product_id": "110741",
+      "set": 250,
+      "product_url": "https://store.tcgplayer.com/magic/zendikar-expeditions/wooded-bastion",
+      "image_url": "https://6d4be195623157e28848-7697ece4918e0a73861de0eb37d08968.ssl.cf1.rackcdn.com/110741_200w.jpg",
+      "mana_cost": "",
+      "cmc": 0,
+      "types": "['Land']",
+      "subtypes": "[]",
+      "colors": "[]",
+      "color_identity": "['G', 'W']",
+      "oracle_text": "{T}: Add {C}.\n{G/W}, {T}: Add {G}{G}, {G}{W}, or {W}{W}."
+    }
+  },
+  {
+    "model": "card_catalog.cardset",
+    "pk": 250,
+    "fields": {
+      "code": "EXP",
+      "name": "Zendikar Expeditions",
+      "tcgplayer_group_id": 1649,
+      "release_date": "2015-10-02"
+    }
+  }
+]

@@ -1,0 +1,136 @@
+[
+  {
+    "model": "registration.user",
+    "pk": "0277a7de-cc84-47ad-ab28-4d50842a19f2",
+    "fields": {
+      "password": "pbkdf2_sha256$150000$rIWrenHg8ebf$TzKfsedOBFc/YurPH/ijJzuNTk7MfZny/Od9dYvJsQg=",
+      "last_login": null,
+      "email": "test_user@domain.com",
+      "username": "TestUser",
+      "date_joined": "2020-05-03T19:17:59.523Z",
+      "is_active": true,
+      "avatar": "",
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "08219e58-58d8-4567-be86-90749096068d",
+    "fields": {
+      "kind": "cube",
+      "kind_override": "",
+      "description": "TestUser's Cube 1",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "212b798d-81c8-40a5-b896-349a54c1024d",
+    "fields": {
+      "kind": "other",
+      "kind_override": "Totally Different Kind",
+      "description": "TestUser's Other Kind of Collection",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "2b1bf610-c6e0-41e7-97fc-439e82496aa3",
+    "fields": {
+      "kind": "other",
+      "kind_override": "Another Totally Different Kind",
+      "description": "TestUser's Second Other Kind of Collection",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "3dde3f11-27be-4fa6-af2d-01270ecb84c0",
+    "fields": {
+      "kind": "cube",
+      "kind_override": "",
+      "description": "TestUser's Cube 1",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "5f9f1e6f-9a0b-4bf1-a5b1-fa3384987aa7",
+    "fields": {
+      "kind": "cube",
+      "kind_override": "",
+      "description": "TestUser's Cube 2",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "8c95f5f8-683f-4c79-8874-634739c78fbc",
+    "fields": {
+      "kind": "deck",
+      "kind_override": "",
+      "description": "TestUser's First Deck",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "9d66970f-4b6e-4fed-8ea8-745497b48833",
+    "fields": {
+      "kind": "tradelist",
+      "kind_override": "",
+      "description": "TestUser's Trades 1",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "a220df6f-1549-44cd-8967-925ee8072a06",
+    "fields": {
+      "kind": "deck",
+      "kind_override": "",
+      "description": "TestUser's Second Deck",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "b8e74992-2bec-4558-9159-8de74db476f8",
+    "fields": {
+      "kind": "collection",
+      "kind_override": "",
+      "description": "TestUser's Collection 1",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "d8e079d5-2af9-4244-a95f-77b5848d243c",
+    "fields": {
+      "kind": "tradelist",
+      "kind_override": "",
+      "description": "TestUser's Trades 2",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.usersubcollection",
+    "pk": "e1e1fa65-e441-49fa-bf95-877918c92ecf",
+    "fields": {
+      "kind": "collection",
+      "kind_override": "",
+      "description": "TestUser's Collection 2",
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  },
+  {
+    "model": "inventory.userinventory",
+    "pk": "659daaff-9a79-4a37-b0d2-b60439f2a720",
+    "fields": {
+      "owner": "0277a7de-cc84-47ad-ab28-4d50842a19f2"
+    }
+  }
+]

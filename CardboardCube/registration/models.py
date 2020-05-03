@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
@@ -33,6 +34,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email = models.EmailField(_('Email Address'), unique=True)
     username = models.CharField(_('Username'), null=False, blank=False, max_length=32, unique=True)
     date_joined = models.DateTimeField(_('Date Joined'), auto_now_add=True)
