@@ -177,19 +177,21 @@ class InventoryItem(models.Model):
         verbose_name_plural = _('Inventory Items')
 
     def __str__(self):
-        name = f"{self.condition} {self.card}"
+        if self.is_graded and self.grading_details:
+            prefix = f"{self.grading_details.determine_abbreviation()}"
+        else:
+            prefix = self.condition
+        name = f"{prefix} {self.card}"
         CHECK_FIELDS = {
             'is_foil': 'Foil',
             'is_signed': 'Signed',
             'is_altered': 'Altered',
             'is_misprint': 'Misprint',
-            'is_miscut': 'Miscut'
+            'is_miscut': 'Miscut',
         }
         for field, field_name in CHECK_FIELDS.items():
             if self.__getattribute__(field):
                 name += f" {field_name}"
-        if self.is_graded and self.grading_details:
-            name = "{self.grading_details.overall_grade} " + name
         return name
 
     def add_grading_details(self, grading_data):
@@ -207,6 +209,7 @@ class InventoryItem(models.Model):
         except (ValueError, TypeError, IntegrityError) as err:
             raise InvalidGradingDetailsException({'Errors': f'Unable to add grading details: {err}'})
         self.grading_details = grading_details
+        self.is_graded = True
         return self.save()
 
 
@@ -246,4 +249,5 @@ class GradingDetails(models.Model):
                 base = 'B'
             if sub > self.overall_grade:
                 modifier += '+'
-        return base + modifier
+        formatted_grade = f'{self.overall_grade:.1f}'
+        return f'{formatted_grade} {base}{modifier}'

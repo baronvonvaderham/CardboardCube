@@ -74,32 +74,38 @@ class TestInventoryItemAndGradingDetails(InventoryModelsTestCase):
         self.assertIsInstance(queried_item.grading_details, GradingDetails)
 
         # This card's a basic bitch, so it should just have "B" for its abbreviation
-        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "B")
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "9.5 B")
+        self.assertEqual(queried_item.__str__(), "9.5 B Arid Mesa [EXP] Foil")
 
         # Update it to be a Quad, so should be "Q"
         queried_item.grading_details.corners_grade = 9.5
         queried_item.grading_details.save()
-        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "Q")
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "9.5 Q")
+        self.assertEqual(queried_item.__str__(), "9.5 Q Arid Mesa [EXP] Foil")
 
         # Bump one grade up to a 10 and this should be "Q+" now
         queried_item.grading_details.surface_grade = 10
         queried_item.grading_details.save()
-        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "Q+")
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "9.5 Q+")
+        self.assertEqual(queried_item.__str__(), "9.5 Q+ Arid Mesa [EXP] Foil")
 
         # Bump a second one up to a 10 for "Q++"
         queried_item.grading_details.edges_grade = 10
         queried_item.grading_details.save()
-        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "Q++")
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "9.5 Q++")
+        self.assertEqual(queried_item.__str__(), "9.5 Q++ Arid Mesa [EXP] Foil")
 
         # Bump a third one up to a 10 for "Q+++" (I guess if you have ONE really low grade)
         queried_item.grading_details.centering_grade = 10
         queried_item.grading_details.save()
-        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "Q+++")
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "9.5 Q+++")
+        self.assertEqual(queried_item.__str__(), "9.5 Q+++ Arid Mesa [EXP] Foil")
 
         # Now if the overall grade is a 10 but the subs stay the same, it should be back to "B"
         queried_item.grading_details.overall_grade = 10
         queried_item.grading_details.save()
-        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "B")
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "10.0 B")
+        self.assertEqual(queried_item.__str__(), "10.0 B Arid Mesa [EXP] Foil")
 
     def test_add_grading_details__failure(self):
         grading_data = {
