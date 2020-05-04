@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-from __future__ import absolute_import, unicode_literals
+from __future__ import absolute_import
 import os
-from CardboardCube import settings
 from celery import Celery
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
 
-app = Celery('CardboardCube', backend=settings.CELERY_RESULT_BACKEND)
+app = Celery('CardboardCube')
 app.config_from_object('django.conf:settings')
 app.autodiscover_tasks()
 
