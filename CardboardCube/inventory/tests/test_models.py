@@ -2,7 +2,7 @@
 from django.test import TestCase
 
 from card_catalog.models import CardSet, Card
-from inventory.exceptions import InvalidInventoryItemException
+from inventory.exceptions import InvalidInventoryItemException, InvalidGradingDetailsException
 from inventory.models import (
     UserInventory,
     UserSubCollection,
@@ -57,7 +57,7 @@ class TestInventoryItemAndGradingDetails(InventoryModelsTestCase):
     def setUp(self):
         super(TestInventoryItemAndGradingDetails, self).setUp()
 
-    def test_add_grading_details(self):
+    def test_add_grading_details__success(self):
         # Kaitlynn's Yule Ooze grading data used :D
         grading_data = {
             'grading_service': 'Beckett Grading Services',
@@ -100,6 +100,19 @@ class TestInventoryItemAndGradingDetails(InventoryModelsTestCase):
         queried_item.grading_details.overall_grade = 10
         queried_item.grading_details.save()
         self.assertEqual(queried_item.grading_details.determine_abbreviation(), "B")
+
+    def test_add_grading_details__failure(self):
+        grading_data = {
+            'grading_service': 'Not a grading service',
+            'serial_number': '0011664787',
+            'overall_grade': 9.5,
+            'centering_grade': 9.5,
+            'corners_grade': 9,
+            'edges_grade': 9.5,
+            'surface_grade': 9.5
+        }
+        with self.assertRaises(InvalidGradingDetailsException):
+            self.inventory_item1.add_grading_details(grading_data=grading_data)
 
 
 class TestInventory(InventoryModelsTestCase):
