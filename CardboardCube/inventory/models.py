@@ -2,6 +2,7 @@ import uuid
 
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
+from django.db.utils import IntegrityError
 from django.utils.translation import ugettext_lazy as _
 
 from inventory.exceptions import (
@@ -203,7 +204,7 @@ class InventoryItem(models.Model):
                 edges_grade=grading_data.get('edges_grade'),
                 surface_grade=grading_data.get('surface_grade')
             )
-        except (ValueError, TypeError) as err:
+        except (ValueError, TypeError, IntegrityError) as err:
             raise InvalidGradingDetailsException({'Errors': f'Unable to add grading details: {err}'})
         self.grading_details = grading_details
         return self.save()

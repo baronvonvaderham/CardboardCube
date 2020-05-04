@@ -103,7 +103,6 @@ class TestInventoryItemAndGradingDetails(InventoryModelsTestCase):
 
     def test_add_grading_details__failure(self):
         grading_data = {
-            'grading_service': 'Not a grading service',
             'serial_number': '0011664787',
             'overall_grade': 9.5,
             'centering_grade': 9.5,
