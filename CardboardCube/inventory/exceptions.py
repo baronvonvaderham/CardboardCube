@@ -6,3 +6,11 @@ class InventoryError(Exception):
 
 class InvalidInventoryItemException(InventoryError):
     pass
+
+
+class InvalidGradingDetailsException(InventoryError):
+    pass
+
+
+class InvalidSubcollectionException(InventoryError):
+    pass

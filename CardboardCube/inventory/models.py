@@ -1,9 +1,14 @@
 import uuid
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from inventory.exceptions import InvalidInventoryItemException
+from inventory.exceptions import (
+    InvalidInventoryItemException,
+    InvalidGradingDetailsException,
+    InvalidSubcollectionException,
+)
 
 
 class UserInventory(models.Model):
@@ -12,6 +17,7 @@ class UserInventory(models.Model):
     """
     uuid = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True)
     owner = models.ForeignKey('registration.User', on_delete=models.CASCADE)
+    inventory_items = models.ManyToManyField('InventoryItem')
 
     objects = models.Manager()
 
@@ -21,10 +27,6 @@ class UserInventory(models.Model):
 
     def __str__(self):
         return f"{self.owner.username}'s Inventory"
-
-    @property
-    def inventory_items(self):
-        return InventoryItem.objects.filter(inventory=self)
 
     @property
     def cubes(self):
@@ -51,27 +53,23 @@ class UserInventory(models.Model):
         kind = dict(UserSubCollection.KIND_CHOICES).get('OTHER')
         return UserSubCollection.objects.filter(owner=self.owner, kind=kind)
 
-    def add_card_to_inventory(self, card_data):
-        try:
-            inventory_item = InventoryItem.objects.create(
-                quantity_owned=card_data.get('quantity_owned') or 0,
-                quantity_wanted=card_data.get('quantity_wanted') or 0,
-                card=card_data.get('card'),
-                condition=card_data.get('condition') or InventoryItem.DEFAULT_CONDITION,
-                language=card_data.get('language') or InventoryItem.DEFAULT_LANGUAGE,
-                is_foil=card_data.get('is_foil') or False,
-                is_signed=card_data.get('is_signed') or False,
-                is_altered=card_data.get('is_altered') or False,
-                is_misprint=card_data.get('is_misprint') or False,
-                is_miscut=card_data.get('is_miscut') or False,
-                is_graded=card_data.get('is_graded') or False,
-                inventory=self,
-                owner=self.owner,
-            )
-        except (ValueError, TypeError) as err:
-            raise InvalidInventoryItemException({'Errors': f'Unable to add card as inventory item: {err}'})
+    def add_items_to_inventory(self, inventory_item_pks):
+        for pk in inventory_item_pks:
+            try:
+                inventory_item = InventoryItem.objects.get(pk=pk)
+            except ObjectDoesNotExist as err:
+                raise InvalidInventoryItemException({'Errors': f'Unable to retrieve inventory item to add: {err}'})
+            self.inventory_items.add(inventory_item)
+        return self.save()
 
-        return inventory_item
+    def remove_items_from_inventory(self, inventory_item_pks):
+        for pk in inventory_item_pks:
+            try:
+                inventory_item = InventoryItem.objects.get(pk=pk)
+            except ObjectDoesNotExist as err:
+                raise InvalidInventoryItemException({'Errors': f'Unable to retrieve inventory item to add: {err}'})
+            self.inventory_items.remove(inventory_item)
+        return self.save()
 
 
 class UserSubCollection(models.Model):
@@ -92,6 +90,7 @@ class UserSubCollection(models.Model):
     kind_override = models.CharField(null=True, max_length=56)
     description = models.TextField(null=True, max_length=256)
     owner = models.ForeignKey('registration.User', on_delete=models.CASCADE)
+    inventory_items = models.ManyToManyField('InventoryItem')
 
     objects = models.Manager()
 
@@ -102,6 +101,24 @@ class UserSubCollection(models.Model):
     def __str__(self):
         collection_type = self.kind_override if self.kind == 'other' else self.kind
         return f"{self.owner.username}'s {collection_type}"
+
+    def add_items_to_subcollection(self, inventory_item_pks):
+        for pk in inventory_item_pks:
+            try:
+                inventory_item = InventoryItem.objects.get(pk=pk)
+            except ObjectDoesNotExist as err:
+                raise InvalidInventoryItemException({'Errors': f'Unable to retrieve inventory item to add: {err}'})
+            self.inventory_items.add(inventory_item)
+        return self.save()
+
+    def remove_items_from_subcollection(self, inventory_item_pks):
+        for pk in inventory_item_pks:
+            try:
+                inventory_item = InventoryItem.objects.get(pk=pk)
+            except ObjectDoesNotExist as err:
+                raise InvalidInventoryItemException({'Errors': f'Unable to retrieve inventory item to add: {err}'})
+            self.inventory_items.remove(inventory_item)
+        return self.save()
 
 
 class InventoryItem(models.Model):
@@ -149,10 +166,8 @@ class InventoryItem(models.Model):
     is_miscut = models.BooleanField(default=False, help_text=_("Is the card miscut?"))
     is_graded = models.BooleanField(default=False, help_text=_("Is the card graded?"))
 
-    collections = models.ManyToManyField('UserSubCollection')
     grading_details = models.ForeignKey('GradingDetails', null=True, on_delete=models.SET_NULL,
                                         help_text=_("Details of card grade"))
-    inventory = models.ForeignKey('UserInventory', null=True, blank=True, on_delete=models.CASCADE)
     owner = models.ForeignKey('registration.User', on_delete=models.CASCADE)
 
     objects = models.Manager()
@@ -176,6 +191,23 @@ class InventoryItem(models.Model):
         if self.is_graded and self.grading_details:
             name = "{self.grading_details.overall_grade} " + name
         return name
+
+    def add_grading_details(self, grading_data):
+        try:
+            grading_details = GradingDetails.objects.create(
+                grading_service=grading_data.get('grading_service'),
+                serial_number=grading_data.get('serial_number'),
+                overall_grade=grading_data.get('overall_grade'),
+                autograph_grade=grading_data.get('autograph_grade'),
+                centering_grade=grading_data.get('centering_grade'),
+                corners_grade=grading_data.get('corners_grade'),
+                edges_grade=grading_data.get('edges_grade'),
+                surfaces_grade=grading_data.get('surfaces_grade')
+            )
+        except (ValueError, TypeError) as err:
+            raise InvalidGradingDetailsException({'Errors': f'Unable to add grading details: {err}'})
+        self.grading_details = grading_details
+        return self.save()
 
 
 class GradingDetails(models.Model):
