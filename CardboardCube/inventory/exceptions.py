@@ -10,7 +10,3 @@ class InvalidInventoryItemException(InventoryError):
 
 class InvalidGradingDetailsException(InventoryError):
     pass
-
-
-class InvalidSubcollectionException(InventoryError):
-    pass

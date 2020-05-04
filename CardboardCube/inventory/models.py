@@ -7,7 +7,6 @@ from django.utils.translation import ugettext_lazy as _
 from inventory.exceptions import (
     InvalidInventoryItemException,
     InvalidGradingDetailsException,
-    InvalidSubcollectionException,
 )
 
 
@@ -202,7 +201,7 @@ class InventoryItem(models.Model):
                 centering_grade=grading_data.get('centering_grade'),
                 corners_grade=grading_data.get('corners_grade'),
                 edges_grade=grading_data.get('edges_grade'),
-                surfaces_grade=grading_data.get('surfaces_grade')
+                surface_grade=grading_data.get('surface_grade')
             )
         except (ValueError, TypeError) as err:
             raise InvalidGradingDetailsException({'Errors': f'Unable to add grading details: {err}'})
@@ -229,7 +228,7 @@ class GradingDetails(models.Model):
     centering_grade = models.DecimalField(null=True, blank=True, decimal_places=1, max_digits=3)
     corners_grade = models.DecimalField(null=True, blank=True, decimal_places=1, max_digits=3)
     edges_grade = models.DecimalField(null=True, blank=True, decimal_places=1, max_digits=3)
-    surfaces_grade = models.DecimalField(null=True, blank=True, decimal_places=1, max_digits=3)
+    surface_grade = models.DecimalField(null=True, blank=True, decimal_places=1, max_digits=3)
 
     objects = models.Manager()
 
@@ -238,7 +237,7 @@ class GradingDetails(models.Model):
         verbose_name_plural = _('Grading Details')
 
     def determine_abbreviation(self):
-        subgrades = [self.centering_grade, self.corners_grade, self.edges_grade, self.surfaces_grade]
+        subgrades = [self.centering_grade, self.corners_grade, self.edges_grade, self.surface_grade]
         base = 'Q'
         modifier = ''
         for sub in subgrades:

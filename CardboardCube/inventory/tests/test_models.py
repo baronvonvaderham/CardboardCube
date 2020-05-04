@@ -47,6 +47,61 @@ class InventoryModelsTestCase(TestCase):
         self.assertEqual(len(subcollections), 10)
 
 
+class TestInventoryItemAndGradingDetails(InventoryModelsTestCase):
+    """
+    Tests for UserInventory model and methods, as well as grading details.
+    Grading details has no methods of its own, and there are grading details
+    methods attached to InventoryItem, so it makes sense to combine those into
+    a single testing class.
+    """
+    def setUp(self):
+        super(TestInventoryItemAndGradingDetails, self).setUp()
+
+    def test_add_grading_details(self):
+        # Kaitlynn's Yule Ooze grading data used :D
+        grading_data = {
+            'grading_service': 'Beckett Grading Services',
+            'serial_number': '0011664787',
+            'overall_grade': 9.5,
+            'centering_grade': 9.5,
+            'corners_grade': 9,
+            'edges_grade': 9.5,
+            'surface_grade': 9.5
+        }
+        self.inventory_item1.add_grading_details(grading_data=grading_data)
+        # Re-Query to make sure it's committed to the db
+        queried_item = InventoryItem.objects.get(pk=self.inventory_item1.pk)
+        self.assertIsInstance(queried_item.grading_details, GradingDetails)
+
+        # This card's a basic bitch, so it should just have "B" for its abbreviation
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "B")
+
+        # Update it to be a Quad, so should be "Q"
+        queried_item.grading_details.corners_grade = 9.5
+        queried_item.grading_details.save()
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "Q")
+
+        # Bump one grade up to a 10 and this should be "Q+" now
+        queried_item.grading_details.surface_grade = 10
+        queried_item.grading_details.save()
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "Q+")
+
+        # Bump a second one up to a 10 for "Q++"
+        queried_item.grading_details.edges_grade = 10
+        queried_item.grading_details.save()
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "Q++")
+
+        # Bump a third one up to a 10 for "Q+++" (I guess if you have ONE really low grade)
+        queried_item.grading_details.centering_grade = 10
+        queried_item.grading_details.save()
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "Q+++")
+
+        # Now if the overall grade is a 10 but the subs stay the same, it should be back to "B"
+        queried_item.grading_details.overall_grade = 10
+        queried_item.grading_details.save()
+        self.assertEqual(queried_item.grading_details.determine_abbreviation(), "B")
+
+
 class TestInventory(InventoryModelsTestCase):
     """
     Tests for UserInventory model and methods
