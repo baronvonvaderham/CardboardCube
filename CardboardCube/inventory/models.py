@@ -17,7 +17,7 @@ class UserInventory(models.Model):
     """
     uuid = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True)
     owner = models.ForeignKey('registration.User', on_delete=models.CASCADE)
-    inventory_items = models.ManyToManyField('InventoryItem')
+    inventory_items = models.ManyToManyField('InventoryItem', blank=True)
 
     objects = models.Manager()
 
@@ -90,7 +90,7 @@ class UserSubCollection(models.Model):
     kind_override = models.CharField(null=True, max_length=56)
     description = models.TextField(null=True, max_length=256)
     owner = models.ForeignKey('registration.User', on_delete=models.CASCADE)
-    inventory_items = models.ManyToManyField('InventoryItem')
+    inventory_items = models.ManyToManyField('InventoryItem', blank=True)
 
     objects = models.Manager()
 

@@ -1,4 +1,4 @@
-from .models import UserInventory, UserSubCollection, InventoryItem, GradingDetails
+from inventory.models import UserInventory, UserSubCollection, InventoryItem, GradingDetails
 
 from rest_framework import serializers
 
